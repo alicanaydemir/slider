@@ -92,17 +92,7 @@ public class SliderAdapter extends PagerAdapter {
      */
     private void loadImage(final ImageView imageView, String url, int corner) {
         if (!TextUtils.isEmpty(url)) {
-            ImageLoaderProvider.getImageLoader().load(url, new ImageLoaderCallback() {
-                @Override
-                public void onLoad(Bitmap bitmap) {
-                    imageView.setImageBitmap(bitmap);
-                }
-
-                @Override
-                public void onError(Throwable error) {
-
-                }
-            });
+            ImageLoaderProvider.getImageLoader().load(url, imageView);
         }
     }
 }

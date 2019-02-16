@@ -1,6 +1,7 @@
 package ir.apend.slider.ui.image;
 
-public interface ImageLoader {
+import android.widget.ImageView;
 
-    void load(String url, ImageLoaderCallback callback);
+public interface ImageLoader {
+    void load(String url, ImageView imageView);
 }
