@@ -13,8 +13,12 @@
     <ImageView
         android:id="@+id/sliderImage"
         android:layout_width="match_parent"
-        android:foreground="?selectableItemBackgroundBorderless"
         android:layout_height="match_parent" />
 
+    <View
+        android:id="@+id/ripple"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/ripple_effect" />
 
 </RelativeLayout>
