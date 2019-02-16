@@ -22,6 +22,7 @@ import ir.apend.slider.model.Slide;
 import ir.apend.slider.ui.adapter.SliderAdapter;
 import ir.apend.slider.ui.customUI.LooperWrapViewPager;
 import ir.apend.slider.ui.image.ImageLoader;
+import ir.apend.slider.ui.image.ImageLoaderProvider;
 import ir.apend.slider.ui.indicators.IndicatorShape;
 import ir.apend.slider.ui.indicators.SlideIndicatorsGroup;
 import ir.apend.sliderlibrary.R;
@@ -207,7 +208,7 @@ public class Slider extends FrameLayout implements ViewPager.OnPageChangeListene
     }
 
     public void setImageLoader(ImageLoader loader) {
-        ((SliderAdapter) viewPager.getAdapter()).setImageLoader(loader);
+        ImageLoaderProvider.setLoader(loader);
     }
 
 }

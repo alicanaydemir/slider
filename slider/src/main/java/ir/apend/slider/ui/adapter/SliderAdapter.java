@@ -23,6 +23,7 @@ import ir.apend.slider.ui.Slider;
 import ir.apend.slider.ui.customUI.RoundedCornersTransformations;
 import ir.apend.slider.ui.image.ImageLoader;
 import ir.apend.slider.ui.image.ImageLoaderCallback;
+import ir.apend.slider.ui.image.ImageLoaderProvider;
 import ir.apend.sliderlibrary.R;
 
 /**
@@ -35,16 +36,11 @@ public class SliderAdapter extends PagerAdapter {
     private LayoutInflater layoutInflater;
     private AdapterView.OnItemClickListener itemClickListener;
     private List<Slide> items = new ArrayList<>();
-    private ImageLoader loader;
 
     public SliderAdapter(@NonNull Context context, List<Slide> items, AdapterView.OnItemClickListener itemClickListener) {
         this.items = items;
         this.itemClickListener = itemClickListener;
         layoutInflater = LayoutInflater.from(context);
-    }
-
-    public void setImageLoader(ImageLoader loader){
-        this.loader = loader;
     }
 
     @Override
@@ -96,7 +92,7 @@ public class SliderAdapter extends PagerAdapter {
      */
     private void loadImage(final ImageView imageView, String url, int corner) {
         if (!TextUtils.isEmpty(url)) {
-            this.loader.load(url, new ImageLoaderCallback() {
+            ImageLoaderProvider.getImageLoader().load(url, new ImageLoaderCallback() {
                 @Override
                 public void onLoad(Bitmap bitmap) {
                     imageView.setImageBitmap(bitmap);
