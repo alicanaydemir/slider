@@ -1,6 +1,7 @@
 package ir.apend.slider.ui.adapter;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.support.annotation.NonNull;
 import android.support.v4.view.PagerAdapter;
 import android.text.TextUtils;
@@ -20,6 +21,8 @@ import java.util.List;
 import ir.apend.slider.model.Slide;
 import ir.apend.slider.ui.Slider;
 import ir.apend.slider.ui.customUI.RoundedCornersTransformations;
+import ir.apend.slider.ui.image.ImageLoader;
+import ir.apend.slider.ui.image.ImageLoaderCallback;
 import ir.apend.sliderlibrary.R;
 
 /**
@@ -32,11 +35,16 @@ public class SliderAdapter extends PagerAdapter {
     private LayoutInflater layoutInflater;
     private AdapterView.OnItemClickListener itemClickListener;
     private List<Slide> items = new ArrayList<>();
+    private ImageLoader loader;
 
     public SliderAdapter(@NonNull Context context, List<Slide> items, AdapterView.OnItemClickListener itemClickListener) {
         this.items = items;
         this.itemClickListener = itemClickListener;
         layoutInflater = LayoutInflater.from(context);
+    }
+
+    public void setImageLoader(ImageLoader loader){
+        this.loader = loader;
     }
 
     @Override
@@ -86,13 +94,19 @@ public class SliderAdapter extends PagerAdapter {
     /**
      * Display the gallery image into the image view provided.
      */
-    private void loadImage(ImageView imageView, String url,int corner) {
+    private void loadImage(final ImageView imageView, String url, int corner) {
         if (!TextUtils.isEmpty(url)) {
-            Glide.with(imageView.getContext()) // Bind it with the context of the actual view used
-                    .load(url) // Load the image
-                    .bitmapTransform(new CenterCrop(imageView.getContext()), new RoundedCornersTransformations(imageView.getContext(), corner, 0, RoundedCornersTransformations.CornerType.ALL))
-                    .animate(R.anim.fade_in) // need to manually set the animation as bitmap cannot use cross fade
-                    .into(imageView);
+            this.loader.load(url, new ImageLoaderCallback() {
+                @Override
+                public void onLoad(Bitmap bitmap) {
+                    imageView.setImageBitmap(bitmap);
+                }
+
+                @Override
+                public void onError(Throwable error) {
+
+                }
+            });
         }
     }
 }
