@@ -13,6 +13,7 @@
 
     <ImageView
         android:id="@+id/sliderImage"
+        android:layout_marginBottom="16dp"
         android:scaleType="centerCrop"
         android:adjustViewBounds="true"
         android:layout_width="match_parent"
