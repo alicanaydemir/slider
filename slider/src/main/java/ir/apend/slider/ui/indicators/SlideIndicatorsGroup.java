@@ -120,7 +120,7 @@ public class SlideIndicatorsGroup extends LinearLayout implements OnSlideChangeL
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, indicatorSize * 2);
         layoutParams.gravity = Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL;
         int margin = getResources().getDimensionPixelSize(R.dimen.default_indicator_margins);
-        layoutParams.setMargins(0, 0, 0, margin);
+        layoutParams.setMargins(0, 0, 0, 0);
         setLayoutParams(layoutParams);
     }
 

@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ir.apend.slider.model.Slide;
+import ir.apend.slider.ui.PicassoLoader;
 import ir.apend.slider.ui.Slider;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,6 +24,9 @@ public class MainActivity extends AppCompatActivity {
 
 
         Slider slider = findViewById(R.id.slider);
+        PicassoLoader picassoLoader=new PicassoLoader();
+
+        slider.setImageLoader(picassoLoader);
 
 
         List<Slide> slideList = new ArrayList<>();
