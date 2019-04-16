@@ -6,7 +6,6 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.AdapterView;
 
-import com.bumptech.glide.load.model.stream.BaseGlideUrlLoader;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,16 +23,16 @@ public class MainActivity extends AppCompatActivity {
 
 
         Slider slider = findViewById(R.id.slider);
-        PicassoLoader picassoLoader=new PicassoLoader();
+        PicassoLoader picassoLoader = new PicassoLoader();
 
         slider.setImageLoader(picassoLoader);
 
 
         List<Slide> slideList = new ArrayList<>();
-        slideList.add(new Slide(0,"http://cssslider.com/sliders/demo-20/data1/images/picjumbo.com_img_4635.jpg" , getResources().getDimensionPixelSize(R.dimen.slider_image_corner)));
-        slideList.add(new Slide(1,"http://cssslider.com/sliders/demo-12/data1/images/picjumbo.com_hnck1995.jpg" , getResources().getDimensionPixelSize(R.dimen.slider_image_corner)));
-        slideList.add(new Slide(2,"http://cssslider.com/sliders/demo-19/data1/images/picjumbo.com_hnck1588.jpg" , getResources().getDimensionPixelSize(R.dimen.slider_image_corner)));
-        slideList.add(new Slide(3,"http://wowslider.com/sliders/demo-18/data1/images/shanghai.jpg" , getResources().getDimensionPixelSize(R.dimen.slider_image_corner)));
+        slideList.add(new Slide(0, "http://cssslider.com/sliders/demo-20/data1/images/picjumbo.com_img_4635.jpg", getResources().getDimensionPixelSize(R.dimen.slider_image_corner)));
+        slideList.add(new Slide(1, "http://cssslider.com/sliders/demo-12/data1/images/picjumbo.com_hnck1995.jpg", getResources().getDimensionPixelSize(R.dimen.slider_image_corner)));
+        slideList.add(new Slide(2, "http://cssslider.com/sliders/demo-19/data1/images/picjumbo.com_hnck1588.jpg", getResources().getDimensionPixelSize(R.dimen.slider_image_corner)));
+        slideList.add(new Slide(3, "http://wowslider.com/sliders/demo-18/data1/images/shanghai.jpg", getResources().getDimensionPixelSize(R.dimen.slider_image_corner)));
 
         slider.setItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

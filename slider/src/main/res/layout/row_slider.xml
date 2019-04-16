@@ -14,7 +14,7 @@
     <ImageView
         android:id="@+id/sliderImage"
         android:scaleType="centerCrop"
-        android:paddingBottom="16dp"
+        android:layout_marginBottom="32dp"
         android:adjustViewBounds="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
