@@ -117,10 +117,10 @@ public class SlideIndicatorsGroup extends LinearLayout implements OnSlideChangeL
 
     public void setup() {
         setOrientation(LinearLayout.HORIZONTAL);
-        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, indicatorSize * 2);
+        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, indicatorSize * 3);
         layoutParams.gravity = Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL;
         int margin = getResources().getDimensionPixelSize(R.dimen.default_indicator_margins);
-        layoutParams.setMargins(0, 0, 0, 16);
+        layoutParams.setMargins(0, 0, 0, 0);
         setLayoutParams(layoutParams);
     }
 
