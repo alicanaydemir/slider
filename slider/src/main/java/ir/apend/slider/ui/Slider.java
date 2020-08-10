@@ -134,6 +134,7 @@ public class Slider extends FrameLayout implements ViewPager.OnPageChangeListene
 
     }
 
+
     public int getCurrentPosition() {
         return viewPager.getCurrentItem();
     }
@@ -141,6 +142,8 @@ public class Slider extends FrameLayout implements ViewPager.OnPageChangeListene
     public int getPosition() {
         return currentPageNumber;
     }
+
+
 
     public void setCurrentItem(int position) {
         viewPager.setCurrentItem(position);
@@ -159,6 +162,7 @@ public class Slider extends FrameLayout implements ViewPager.OnPageChangeListene
             }
         }
     }
+
 
     @Override
     public void onPageScrollStateChanged(int state) {

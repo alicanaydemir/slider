@@ -17,9 +17,9 @@ public class CircleIndicator extends IndicatorShape {
     public CircleIndicator(Context context, int indicatorSize, boolean mustAnimateChanges) {
         super(context, indicatorSize, mustAnimateChanges);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-            setBackground(ResourcesCompat.getDrawable(getResources(), R.drawable.indicator_circle_unselected_gray, null));
+            setBackground(ResourcesCompat.getDrawable(getResources(), R.drawable.ic_unselected, null));
         } else {
-            setBackgroundDrawable(getResources().getDrawable(R.drawable.indicator_circle_unselected_gray));
+            setBackgroundDrawable(getResources().getDrawable(R.drawable.ic_unselected));
         }
     }
 
@@ -28,15 +28,15 @@ public class CircleIndicator extends IndicatorShape {
         super.onCheckedChange(isChecked);
         if (isChecked) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                setBackground(ResourcesCompat.getDrawable(getResources(), R.drawable.indicator_circle_selected_purple, null));
+                setBackground(ResourcesCompat.getDrawable(getResources(), R.drawable.ic_selected, null));
             } else {
-                setBackgroundDrawable(getResources().getDrawable(R.drawable.indicator_circle_selected_purple));
+                setBackgroundDrawable(getResources().getDrawable(R.drawable.ic_selected));
             }
         } else {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                setBackground(ResourcesCompat.getDrawable(getResources(), R.drawable.indicator_circle_unselected_gray, null));
+                setBackground(ResourcesCompat.getDrawable(getResources(), R.drawable.ic_unselected, null));
             } else {
-                setBackgroundDrawable(getResources().getDrawable(R.drawable.indicator_circle_unselected_gray));
+                setBackgroundDrawable(getResources().getDrawable(R.drawable.ic_unselected));
             }
         }
     }
